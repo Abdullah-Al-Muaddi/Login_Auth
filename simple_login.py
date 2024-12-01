@@ -21,14 +21,12 @@ if "otp_secret" not in st.session_state:
 
 #========================================>Login Page<======================================
 def login_page():
-    # st.title("MFA Authentication - Login")
-    st.markdown("<h1 style='text-align: center; color:light grey;'>MFA Authentication - Login</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>MFA Authentication - Login</h1>", unsafe_allow_html=True)
 
     # Display test credentials
-    st.markdown("<h3 style='color: #4B4B4B;'>Test Login Credentials</h6>", unsafe_allow_html=True)
-    # st.write("Email: **Test_User@gmail.com**")
-    st.markdown("<p style='color: #555555;'>Email: Test_User@gmail.com</p>", unsafe_allow_html=True)
-    st.markdown("<p style='color: #555555;'>Password: Test1234</p>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color:grey;'>Test Login Credentials</h6>", unsafe_allow_html=True)
+    st.markdown("<p style='color: grey;'>Email: Test_User@gmail.com</p>", unsafe_allow_html=True)
+    st.markdown("<p style='color:grey;'>Password: Test1234</p>", unsafe_allow_html=True)
   
     st.divider()
 
@@ -54,7 +52,7 @@ def login_page():
 
 #========================================>OTP Page<======================================
 def otp_page():
-    st.markdown("<h1 style='text-align: center; color: light grey;'>MFA Authentication - OTP Verification</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color:grey;'>MFA Authentication - OTP Verification</h1>", unsafe_allow_html=True)
     st.divider()
     # Ensure the user is logged in
     if not st.session_state.current_user:
@@ -72,7 +70,7 @@ def otp_page():
             st.session_state.page = "main"  # Reset page to login
             st.session_state.current_user = None  # Clear user session
             st.session_state.otp_secret = None  # Clear OTP secret
-            st.rerun()  # Trigger rerun to reset the app state
+            st.rerun()  # Rerun to display main page
         else:
             st.error("Invalid OTP")
 
@@ -83,7 +81,7 @@ def otp_page():
 #========================================>Main Page<======================================
 def main_page():
 
-    st.markdown("<h1 style='text-align: center; color: light grey;'>Customer Banking System</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color:grey;'>Customer Banking System</h1>", unsafe_allow_html=True)
     st.divider()
 
     st.subheader("Account Summary") # Simple Account Summary
